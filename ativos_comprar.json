@@ -1,0 +1,14 @@
+{
+  "ativos": [
+    {
+      "ticker": "Ativo teste1",
+      "quantidade": 10,
+      "precoMedio": 35.92
+    },
+    {
+      "ticker": "Ativo teste2",
+      "quantidade": 10,
+      "precoMedio": 35.92
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+def criacao_ativos():
+  carteira = []
+
+  ticker_user    =   input("Qual o ticker: ")
+  qntd_user      =   int(input("Qual a quantidade: "))
+  prc_medio_user =   float(input("Preço médio: "))
+  ativo_date = datetime.now()
+  ativo_date_format = ativo_date.strftime("%d/%m/%Y %H:%M")
+
+  
+
+  if(type(ticker_user) == 'int'): 
+    print("ticker não pode ser um número")
+    
+  ativo_user = {
+    "ticker": ticker_user,
+    "quantidade": qntd_user,
+    "precoMedio": prc_medio_user,
+    "dateCreated": ativo_date_format
+  }
+
+  carteira.append(ativo_user)
+
+  with open("ativos.json", "w") as f: 
+     json.dump(ativo_user, f)
+
+
+criacao_ativos()

@@ -1,40 +1,28 @@
 import json 
+from datetime import datetime, date, timedelta
 
 
 
-
-def criacao_ativos():
-  carteira = []
-
-  ticker_user    =   input("Qual o ticker: ")
-  qntd_user      =   input("Qual a quantidade: ")
-  prc_medio_user =   input("Preço médio: ")
-
-  
-
-  if(type(ticker_user) == 'int'): 
-    print("ticker não pode ser um número")
-    
-  ativo_user = {
-    "ticker": ticker_user,
-    "quantidade": qntd_user,
-    "preço médio": prc_medio_user
-  }
-
-  carteira.append(ativo_user)
-
-  print(carteira)
-  print(ativo_user)
+def menu():
+  user_name = input("Qual o seu nome?: ")
 
 
-criacao_ativos()
+  if(len(user_name) < 3 or type(user_name) == "int"):
+    print("Nome deve ter no mínimo 3 letras e não deve ser um número")
+
+  print(f"O que quer fazer hoje, {user_name}?")
+  print("1. Comprar ativos")
+  print("2. Ver meus ativos")
+
+  user_choice = input(": ")
+
+  if(user_choice == "1"): 
+    with open("ativos_comprar.json", "r") as f:
+      ativos_data = json.load(f)
+      print(ativos_data.items())
 
 
-
-
-
-#print(type(1))
-
+menu()
 
 
 
